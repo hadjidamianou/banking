@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Customer {
-    private String name;
-    private ArrayList<Double> transactions;
+    private final String name;
+    private final ArrayList<Double> transactions;
 
     public Customer(String name,double initialAmount) {
         this.name = name;
-        this.transactions = new ArrayList<Double>();
+        this.transactions = new ArrayList<>();
         addTransaction(initialAmount);
     }
 
@@ -20,5 +20,13 @@ public class Customer {
 
     public ArrayList<Double> getTransactions() {
         return transactions;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", transactions=" + transactions +
+                '}';
     }
 }
